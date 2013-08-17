@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `fuel_param` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `aircraft` varchar(12) NOT NULL DEFAULT '',
-  `flow` varchar(12) NOT NULL DEFAULT '0',
-  `hour` varchar(12) NOT NULL DEFAULT '0',
-  `frange` varchar(12) NOT NULL,
-  `speed` varchar(12) NOT NULL DEFAULT '0',
-  `alt` varchar(12) NOT NULL DEFAULT '0',
+  `flow` int(12) NOT NULL DEFAULT '0',
+  `hour` int(12) NOT NULL DEFAULT '0',
+  `frange` int(12) NOT NULL,
+  `speed` int(12) NOT NULL DEFAULT '0',
+  `alt` int(12) NOT NULL DEFAULT '0',
   `date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   UNIQUE KEY `aircraft` (`aircraft`)
