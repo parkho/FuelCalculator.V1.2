@@ -3,7 +3,7 @@ class FCalculator extends CodonData
 {
 	public function findaircraft() 
 		{
-			$sql = "SELECT * FROM phpvms_aircraft";
+			$sql = "SELECT * FROM".TABLE_PREFIX."aircraft";
 			return DB::get_results($sql);
 		}
 	
