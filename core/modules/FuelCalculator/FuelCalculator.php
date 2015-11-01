@@ -5,7 +5,7 @@ class FuelCalculator extends CodonModule
 		{
 			$this->set('title','Fuel Calculator');
             $this->set('aircrafts', FCalculator::findaircraft());
-            $this->show('/fc/fuelcalculator.tpl');
+            $this->show('/fc/fuelcalculator.php');
 		}
 	
 	public function result()
@@ -36,7 +36,7 @@ class FuelCalculator extends CodonModule
 			$this->set('result', $result);
 			$this->set('fuelflow', $fuelflow);
 			$this->set('title', 'Fuel Calculator');
-			$this->render('/fc/results.tpl');
+			$this->render('/fc/results.php');
 		}
 	
 	public function anotmail()
@@ -86,12 +86,12 @@ class FuelCalculator extends CodonModule
 			
 			$email = $this->post->email;
 			$subject = 'Fuel Calculation Results For '.$ac;
-			$message = Template::Get('/fc/fc_mail.tpl', true);
+			$message = Template::Get('/fc/fc_mail.php', true);
 			Util::SendEmail($email, $subject, $message);
 			
 			$this->set('message', 'Email Results For '.$ac.' Was Sent To '.$email);
 			$this->render('/fc/core_success.tpl');
-			$this->render('/fc/results.tpl');
+			$this->render('/fc/results.php');
 		}
 		
 	
@@ -142,12 +142,12 @@ class FuelCalculator extends CodonModule
 			
 			$email = Auth::$userinfo->email;
 			$subject = 'Fuel Calculation Results For '.$ac;
-			$message = Template::Get('/fc/fc_mail.tpl', true);
+			$message = Template::Get('/fc/fc_mail.php', true);
 			Util::SendEmail($email, $subject, $message);
 			
 			$this->set('message', 'Email Results For '.$ac.' Was Sent.');
 			$this->render('/fc/core_success.tpl');
-			$this->render('/fc/results.tpl');
+			$this->render('/fc/results.php');
 		}
 }
 ?>

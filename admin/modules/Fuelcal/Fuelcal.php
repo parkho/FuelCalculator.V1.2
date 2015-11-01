@@ -4,7 +4,7 @@ class fuelcal extends CodonModule
 	public function NavBar()
         {
                 echo '<li><a href="'.SITE_URL.'/admin/index.php/fuelcal">Fuel Calculator Params</a></li>';
-				$this->set('sidebar', '/fc/fuel_help.tpl');
+				$this->set('sidebar', '/fc/fuel_help.php');
         }
 		
 	public function index() 
@@ -12,7 +12,7 @@ class fuelcal extends CodonModule
 			$this->set('title','Fuel Calculator Parameters Setting');
             $this->set('aircrafts', FCalculator::findaircraft());
             $this->set('params', FCalculator::getparam());
-            $this->show('/fc/fuel_param.tpl');
+            $this->show('/fc/fuel_param.php');
 		}
 	
 	public function addparam()
@@ -20,7 +20,7 @@ class fuelcal extends CodonModule
 			$this->set('aircrafts', FCalculator::findaircraft());
 			$this->set('title', 'Add Aircraft Parameters');
 			$this->set('action', 'paramadd');
-			$this->render('/fc/aircraft_param.tpl');
+			$this->render('/fc/aircraft_param.php');
 		}
 	
 	public function editparam($id)
@@ -36,7 +36,7 @@ class fuelcal extends CodonModule
 			$this->set('fa', $result->alt);
 			$this->set('fs', $result->speed);
 			$this->set('id', $result->id);
-			$this->render('/fc/edit_param.tpl');
+			$this->render('/fc/edit_param.php');
 		}
 	
 	public function param()
@@ -53,7 +53,7 @@ class fuelcal extends CodonModule
 					$this->render('/core_error.tpl');
 					$this->set('aircrafts', FCalculator::findaircraft());
 					$this->set('params', FCalculator::getparam());
-					$this->render('/fc/fuel_param.tpl');
+					$this->render('/fc/fuel_param.php');
 					return;
 				}
 			
@@ -61,10 +61,10 @@ class fuelcal extends CodonModule
 			
 			
 			$this->set('message', 'Parameters for '.$aircraft.' Were Added.');
-			$this->render('/fc/core_success.tpl');
+			$this->render('/fc/core_success.php');
 			$this->set('aircrafts', FCalculator::findaircraft());
 			$this->set('params', FCalculator::getparam());
-			$this->render('/fc/fuel_param.tpl');
+			$this->render('/fc/fuel_param.php');
 		}
 	
 	public function paramedit()
@@ -82,7 +82,7 @@ class fuelcal extends CodonModule
 					$this->render('/core_error.tpl');
 					$this->set('aircrafts', FCalculator::findaircraft());
 					$this->set('params', FCalculator::getparam());
-					$this->render('/fc/fuel_param.tpl');
+					$this->render('/fc/fuel_param.php');
 					return;
 				}
 			
@@ -93,7 +93,7 @@ class fuelcal extends CodonModule
 			$this->render('/fc/core_success.tpl');
 			$this->set('aircrafts', FCalculator::findaircraft());
 			$this->set('params', FCalculator::getparam());
-			$this->render('/fc/fuel_param.tpl');
+			$this->render('/fc/fuel_param.php');
 		}
 	
 	public function remove($id)
@@ -105,7 +105,7 @@ class fuelcal extends CodonModule
 					$this->render('/core_error.tpl');
 					$this->set('aircrafts', FCalculator::findaircraft());
 					$this->set('params', FCalculator::getparam());
-					$this->render('/fc/fuel_param.tpl');
+					$this->render('/fc/fuel_param.php');
 					return;
 				}
 			
@@ -116,7 +116,7 @@ class fuelcal extends CodonModule
 			$this->render('/fc/core_success.tpl');
 			$this->set('aircrafts', FCalculator::findaircraft());
 			$this->set('params', FCalculator::getparam());
-			$this->render('/fc/fuel_param.tpl');
+			$this->render('/fc/fuel_param.php');
 		}
 			
 	
