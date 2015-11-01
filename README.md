@@ -7,8 +7,11 @@ Install:
 
     Download the zip.
     Unzip and upload in the order of folder structure.
+    Import fuel_param.sql in your DB.
     Make a link to access it by <?php echo url('fuelcalculator');?> for your pilots.
     For admins, it's under add ons section of admin center.
     Enjoy.
 
-Email me at info@alvandair.com or leave a post at the forum in case of any troubles.
+Support:
+
+Fill out the contact me form at www.parkho.ir
