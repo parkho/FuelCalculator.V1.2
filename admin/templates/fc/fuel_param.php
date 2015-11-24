@@ -2,7 +2,6 @@
 <form method="post" action="<?php echo adminurl('/Fuelcal/param');?>">
 <table class="balancesheet" border="0" width="100%">
 <tr><td colspan="8" bgcolor="black" align="center"><font color="white" size="3"><b>Aircraft List</b></font></td></tr>
-<tr><td colspan="8"><hr></td></tr>
 <tr></tr><td align="center" colspan="8"><a id="dialog" class="jqModal" href="<?php echo SITE_URL?>/admin/action.php/Fuelcal/addparam"><input type="button" Value="Set Parameters"></a></td></tr>
 <tr>
 	<th align="center">id</th>
